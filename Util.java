@@ -77,7 +77,7 @@ public class Util{
 		double diff = 0.0;
 		for(int i = 0; i < a.length; i++){
 			diff = a[i] - b[i];
-			sum += Math.pow(diff, 2);
+			sum += diff*diff;
 		}
 		return Math.sqrt(sum);
 	}
