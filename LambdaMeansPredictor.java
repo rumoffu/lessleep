@@ -59,11 +59,11 @@ public class LambdaMeansPredictor extends Predictor{
 		}
 		mewk.add(Util.scalarMultiply(1.0/instances.size(), sum));
 		
-		//initialize rnk
+		// Initialize rnk
 		ArrayList<Integer> newCluster = new ArrayList<Integer>();
 		rnk.add(newCluster);
 		
-		//Initialize Lambda Value
+		// Initialize Lambda Value
 		if(this.cluster_lambda == 0.0){
 			double lambdasum = 0.0;
 			for(Instance e : instances){
@@ -74,6 +74,7 @@ public class LambdaMeansPredictor extends Predictor{
 		}
 		System.out.println("Cluster lambda: " + this.cluster_lambda);
 		
+		// Perform training iterations
 		for(int i = 0; i < this.clustering_training_iterations; i++){
 			Estep(instances);
 			Mstep(instances);
@@ -159,7 +160,6 @@ public class LambdaMeansPredictor extends Predictor{
 				minCluster = k;
 			}
 		}
-		
 		return new ClassificationLabel(minCluster);
 	}
 	

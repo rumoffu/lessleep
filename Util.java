@@ -79,7 +79,8 @@ public class Util{
 			diff = a[i] - b[i];
 			sum += diff*diff;
 		}
-		return Math.sqrt(sum);
+		//return Math.sqrt(sum);
+		return sum;
 	}
 
 	public String toString() {
