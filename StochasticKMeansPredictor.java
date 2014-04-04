@@ -59,6 +59,11 @@ public class StochasticKMeansPredictor extends Predictor{
 	}
 	
 	private void clusterData(List<Instance> instances){
+		Double[] um = new Double[this.number_of_features];
+		for(int i = 0; i < this.number_of_features; i++){
+			um[i] = 0.0;
+		}
+		System.out.println(Util.euclideanDistance(this.mewk.get(0), um));
 		double minDist = Double.POSITIVE_INFINITY;
 		double dist;
 		Double[] xi;
@@ -89,6 +94,7 @@ public class StochasticKMeansPredictor extends Predictor{
 			updateCluster(minCluster, instances);
 //			addToCluster(instances.get(j), j); //faster but might be wrong
 		}
+		
 		
 	}
 	private void updateCluster(int cluster_num, List<Instance> instances){
