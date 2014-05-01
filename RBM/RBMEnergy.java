@@ -62,7 +62,7 @@ public class RBMEnergy {
 			double z = Util.dot(this.xt, wj) + this._parameters.hiddenBias(j);
 			double p = sigma(z);
 			double u = this.rand.nextDouble();
-			if (u < p) {
+			if (u < (1-p)) {
 				h[j] = 0;
 			} else {
 				h[j] = 1;
@@ -81,7 +81,7 @@ public class RBMEnergy {
 			double z = Util.dot(this.ht, wi) + this._parameters.visibleBias(i);
 			double p = sigma(z);
 			double u = this.rand.nextDouble();
-			if (u < p) {
+			if (u < (1-p)) {
 				x[i] = 0;
 			} else {
 				x[i] = 1;
